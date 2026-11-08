@@ -26,4 +26,4 @@ The center answered 73.4% of calls within 60 seconds in 2025, against a goal of 
 
 ## Worth exploring
 
-Five separate queues each need their own buffer of idle agents. If one cross-trained team answered every queue, the same service level would need about 20.3 fewer FTE. A pilot cross-training billing and cancellations would test how much of that saving holds in practice.
+Five separate queues each need their own buffer of idle agents. If one cross-trained team answered every queue, the same service level would need about 20 fewer FTE. A pilot cross-training billing and cancellations would test how much of that saving holds in practice.

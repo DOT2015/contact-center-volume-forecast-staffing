@@ -52,7 +52,7 @@ def build_context(res, truth):
         "ot_notice": money(st["ot_cost_notice_incremental"]), "ot_notice_h": f"{st['ot_hours_notice_incremental']:,.0f}",
         "ot_h_scen": f"{st['ot_hours_scenario']:,.0f}",
         "ot_nohire_base": money(st["ot_cost_no_hiring_baseline"]), "ot_nohire_scen": money(st["ot_cost_no_hiring_scenario"]),
-        "pooled_fte": f"{st['pooled_required_fte_mean']:.1f}", "pooled_save": f"{st['pooled_saving_fte']:.1f}",
+        "pooled_fte": f"{st['pooled_required_fte_mean']:.1f}", "pooled_save": f"{st['pooled_saving_fte']:.0f}",
         "sl_2024": pct(sl["sl_2024"]), "sl_2025": pct(sl["sl_2025"]), "sl_q4": pct(sl["sl_q4_2025"]),
         "ab_2025": pct(sl["abandon_2025"]), "sl_weeks_ok": str(sl["weeks_meeting_target_2025"]),
         "sl_weeks": str(sl["weeks_2025"]), "sl_notice": pct(sl["notice_week_sl"]), "occ": pct(sl["occupancy_2025"], 0),

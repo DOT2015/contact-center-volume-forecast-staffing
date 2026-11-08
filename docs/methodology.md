@@ -40,4 +40,4 @@ All data is synthetic (seed 42).
 - The intervals are applied to the mean forecast. The P90 view staffs every interval to the upper bound at the same time, which overstates the need. A better approach is simulation-based staffing to a service-level distribution.
 - The price-notice estimate comes from one event. The 2026 scenario assumes the same response.
 - Only two years of history, so no annual seasonality term.
-- The 48-FTE roster is a simulated assumption. It was scaled down from the brief's 118 FTE so the volume fits the 500k-row fact-table standard.
+- The 48-FTE roster is a simulated assumption, sized to the simulated call volume (about 485k call legs over two years).
