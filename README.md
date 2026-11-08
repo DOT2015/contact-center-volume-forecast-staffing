@@ -128,7 +128,7 @@ The generator writes its parameters and realized values to [`data/truth/planted_
 
 | Issue (planted) | Found | Handling |
 |---|---|---|
-| `arrival_ts` stored as local time (not UTC) from 2024-01-01 to 2024-03-31 | 55,969 legs; read as UTC, 0 would fall outside opening hours | Rows before the 2024-04-01 migration converted local -> UTC in `02_stg_call_leg.sql` |
+| `arrival_ts` stored as local time (not UTC) from 2024-01-01 to 2024-03-31 | 55,969 legs; read as UTC, 25,079 would fall outside opening hours | Rows before the 2024-04-01 migration converted local -> UTC in `02_stg_call_leg.sql` |
 | DST: repeated 01:00/01:30 in November, missing 02:00/02:30 in March (staffing table, local time) | 20 duplicate rows in 175,440 | Collapsed with `MAX` on (interval, queue); both fall in closed hours |
 | Queue codes renamed at the 2025-05-01 IVR change, plus a 'TS' alias | 11 raw codes, 9,418 'TS' rows | Mapping table `ref_queue_code`; 0 unmapped rows |
 | Transfers split contacts into legs | 4.0% of contacts | Demand = contacts (`fct_contact`); workload = legs |

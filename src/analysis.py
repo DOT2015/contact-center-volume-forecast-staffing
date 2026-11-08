@@ -478,9 +478,11 @@ def main():
     """).df().iloc[0]
     res["data_quality"] = {k: int(v) for k, v in dq.items()}
     res["data_quality"]["missing_dates"] = [str(d.date()) for d in feat[feat.is_missing_data].date]
-    naive_q1 = con.execute("""SELECT COUNT(*) FROM raw_fact_call_leg
-                              WHERE arrival_ts < TIMESTAMP '2024-04-01' AND (EXTRACT(hour FROM arrival_ts) < 7
-                              OR EXTRACT(hour FROM arrival_ts) >= 21)""").fetchone()[0]
+    # if the pre-migration rows were (wrongly) read as UTC and converted to local, how many land outside 07-21?
+    naive_q1 = con.execute("""SELECT COUNT(*) FROM (
+                                  SELECT EXTRACT(hour FROM (arrival_ts AT TIME ZONE 'UTC') AT TIME ZONE 'America/Chicago') AS h
+                                  FROM raw_fact_call_leg WHERE arrival_ts < TIMESTAMP '2024-04-01')
+                              WHERE h < 7 OR h >= 21""").fetchone()[0]
     res["data_quality"]["q1_2024_calls_outside_hours_if_read_as_utc"] = int(naive_q1)
 
     RESULTS.write_text(json.dumps(res, indent=2, default=lambda o: o.item() if hasattr(o, "item") else str(o)))
