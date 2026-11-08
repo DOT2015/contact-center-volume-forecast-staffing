@@ -1,0 +1,403 @@
+{
+  "effects": {
+    "dow_index_vs_thursday": {
+      "Mon": 1.3525471858108422,
+      "Tue": 1.15364791048623,
+      "Wed": 1.0538304390593514,
+      "Thu": 1.0,
+      "Fri": 0.9491712246894732,
+      "Sat": 0.554138579103184,
+      "Sun": 0.45458470455797967
+    },
+    "dow_index_ci": {
+      "Mon": [
+        1.3393074585161402,
+        1.3659177944634604
+      ],
+      "Tue": [
+        1.1420110372354106,
+        1.1654033612416796
+      ],
+      "Wed": [
+        1.0437438974977011,
+        1.0640144550310735
+      ],
+      "Fri": [
+        0.9397621257574109,
+        0.9586745295277823
+      ],
+      "Sat": [
+        0.5477544709999207,
+        0.5605970943330559
+      ],
+      "Sun": [
+        0.44842618465004047,
+        0.4608278033079998
+      ]
+    },
+    "trend_per_month": 0.006182996863978829,
+    "trend_per_month_ci": [
+      0.0057570535065640804,
+      0.006609120610626906
+    ],
+    "billing_cycle_lift": 0.2216415110714236,
+    "billing_cycle_lift_ci": [
+      0.20802676713697887,
+      0.2354096963512451
+    ],
+    "intraday_index": {
+      "07:00": 0.6058034067465246,
+      "07:30": 0.6463294808184576,
+      "08:00": 0.7033297725027696,
+      "08:30": 0.7936845877247343,
+      "09:00": 0.9014155090161483,
+      "09:30": 1.0382123318009617,
+      "10:00": 1.6097710839031178,
+      "10:30": 1.6004928422502795,
+      "11:00": 1.5897592243980974,
+      "11:30": 1.2842256099674356,
+      "12:00": 1.2166571767274053,
+      "12:30": 1.1770504934701096,
+      "13:00": 1.2847273110157857,
+      "13:30": 1.3011314645177567,
+      "14:00": 1.3014829574868023,
+      "14:30": 1.0799009885917403,
+      "15:00": 1.0420176253561437,
+      "15:30": 0.9651446111914659,
+      "16:00": 0.8959578449225682,
+      "16:30": 0.844292467830639,
+      "17:00": 0.8270595986527969,
+      "17:30": 0.8648565289812373,
+      "18:00": 0.8692949131220777,
+      "18:30": 0.8293203079698167,
+      "19:00": 0.790186628182932,
+      "19:30": 0.7055236131156234,
+      "20:00": 0.6338711626634121,
+      "20:30": 0.5985004570731576
+    },
+    "intraday_peak_10_to_1130": 1.600007716850498,
+    "intraday_peak_13_to_1430": 1.2957805776734481,
+    "outage_calls_per_customer": 0.0037660062379726326,
+    "outage_calls_per_customer_ci": [
+      0.0034941008757167573,
+      0.0040379116002285075
+    ],
+    "outage_n": 88,
+    "outage_r2": 0.8408233875740669,
+    "billing_cycle_lift_sql_by_year": [
+      {
+        "yr": 2024,
+        "lift": 0.19954645274098337
+      },
+      {
+        "yr": 2025,
+        "lift": 0.2461284922818477
+      }
+    ]
+  },
+  "price_notice": {
+    "lift_day0": 0.3482534592871112,
+    "lift_day0_ci": [
+      0.22909904519948593,
+      0.4674078733747365
+    ],
+    "half_life_days": 2.5682896175378778,
+    "half_life_ci": [
+      1.0697742850788312,
+      4.066804949996924
+    ],
+    "excess_contacts_10d": 496.7621275848818,
+    "pre_period_mean_abs_error": 0.05189927276377393,
+    "aht_lift": 0.08127373577318142,
+    "aht_lift_ci": [
+      0.056600545079134326,
+      0.10594692646722852
+    ],
+    "aht_before_sec": 312.97318007662835,
+    "aht_window_sec": 338.40967961826857
+  },
+  "contacts_vs_legs": {
+    "contacts": 465906,
+    "legs": 484516,
+    "multi_leg_share": 0.0399436796263624
+  },
+  "service_level": {
+    "sl_2024": 0.7427063854837592,
+    "sl_2025": 0.7344509290614918,
+    "sl_q4_2025": 0.7185322956944512,
+    "abandon_2025": 0.10200462729463378,
+    "weeks_meeting_target_2025": 0,
+    "weeks_2025": 52,
+    "notice_week_sl": 0.6862314865606144,
+    "occupancy_2025": 0.3764970678348862
+  },
+  "backtest": {
+    "folds": 8,
+    "horizon_days": 91,
+    "fold_step_days": 28,
+    "origins": [
+      "2025-03-20",
+      "2025-04-17",
+      "2025-05-15",
+      "2025-06-12",
+      "2025-07-10",
+      "2025-08-07",
+      "2025-09-04",
+      "2025-10-02"
+    ],
+    "scores": [
+      {
+        "queue": "billing",
+        "model": "naive",
+        "wape": 0.1312287429523614,
+        "mase": 1.102563914772801
+      },
+      {
+        "queue": "billing",
+        "model": "ets",
+        "wape": 0.0928493814187343,
+        "mase": 0.7819572980373705
+      },
+      {
+        "queue": "billing",
+        "model": "regression",
+        "wape": 0.057424027932336155,
+        "mase": 0.4833184005914818
+      },
+      {
+        "queue": "cancellations",
+        "model": "naive",
+        "wape": 0.14871784368343438,
+        "mase": 1.075229197315088
+      },
+      {
+        "queue": "cancellations",
+        "model": "ets",
+        "wape": 0.10625114485295815,
+        "mase": 0.7678035435584912
+      },
+      {
+        "queue": "cancellations",
+        "model": "regression",
+        "wape": 0.10004660037034,
+        "mase": 0.7230454461930711
+      },
+      {
+        "queue": "moves_new_service",
+        "model": "naive",
+        "wape": 0.15132797129961809,
+        "mase": 1.2037659068512503
+      },
+      {
+        "queue": "moves_new_service",
+        "model": "ets",
+        "wape": 0.09624453575762094,
+        "mase": 0.7655505350630532
+      },
+      {
+        "queue": "moves_new_service",
+        "model": "regression",
+        "wape": 0.08515824285097338,
+        "mase": 0.6776185648599728
+      },
+      {
+        "queue": "outage",
+        "model": "naive",
+        "wape": 0.18726982141616288,
+        "mase": 0.9963185128227806
+      },
+      {
+        "queue": "outage",
+        "model": "ets",
+        "wape": 0.13765440668010412,
+        "mase": 0.7326518233483451
+      },
+      {
+        "queue": "outage",
+        "model": "regression",
+        "wape": 0.1300183863617209,
+        "mase": 0.6920464400165681
+      },
+      {
+        "queue": "tech_support",
+        "model": "naive",
+        "wape": 0.0955502561196009,
+        "mase": 1.149190104352551
+      },
+      {
+        "queue": "tech_support",
+        "model": "ets",
+        "wape": 0.06223371575906044,
+        "mase": 0.749685679275665
+      },
+      {
+        "queue": "tech_support",
+        "model": "regression",
+        "wape": 0.05680535245611246,
+        "mase": 0.6842227751263339
+      },
+      {
+        "queue": "total",
+        "model": "naive",
+        "wape": 0.07726251100213756,
+        "mase": 1.1791342301446157
+      },
+      {
+        "queue": "total",
+        "model": "ets",
+        "wape": 0.051205788551582275,
+        "mase": 0.7816377620222797
+      },
+      {
+        "queue": "total",
+        "model": "regression",
+        "wape": 0.03405787532205136,
+        "mase": 0.5197063515872801
+      }
+    ],
+    "pi80_coverage": 0.8005517241379311,
+    "total_wape": {
+      "naive": 0.07726251100213756,
+      "ets": 0.051205788551582275,
+      "regression": 0.03405787532205136
+    },
+    "total_mase": {
+      "naive": 1.1791342301446157,
+      "ets": 0.7816377620222797,
+      "regression": 0.5197063515872801
+    },
+    "wape_reduction_vs_naive": 0.5591927458698682,
+    "best_model": "regression"
+  },
+  "forecast_coefficients_log_scale": {
+    "billing": {
+      "const": 5.4026,
+      "months": 0.0061,
+      "dow_Mon": 0.295,
+      "dow_Tue": 0.1427,
+      "dow_Wed": 0.0353,
+      "dow_Fri": -0.055,
+      "dow_Sat": -0.5969,
+      "dow_Sun": -0.7915,
+      "holiday_open": -0.3541,
+      "billing_cycle": 0.1961,
+      "notice_decay": 0.29
+    },
+    "tech_support": {
+      "const": 5.4902,
+      "months": 0.0062,
+      "dow_Mon": 0.3067,
+      "dow_Tue": 0.1501,
+      "dow_Wed": 0.0667,
+      "dow_Fri": -0.0432,
+      "dow_Sat": -0.5755,
+      "dow_Sun": -0.7766,
+      "holiday_open": -0.3431,
+      "outage_k_customers": 0.0149
+    },
+    "moves_new_service": {
+      "const": 4.4829,
+      "months": 0.0066,
+      "dow_Mon": 0.3213,
+      "dow_Tue": 0.1482,
+      "dow_Wed": 0.0683,
+      "dow_Fri": -0.0322,
+      "dow_Sat": -0.5933,
+      "dow_Sun": -0.8015,
+      "holiday_open": -0.3608,
+      "promo": 0.1041
+    },
+    "cancellations": {
+      "const": 4.1659,
+      "months": 0.0059,
+      "dow_Mon": 0.2864,
+      "dow_Tue": 0.1315,
+      "dow_Wed": 0.0748,
+      "dow_Fri": -0.0628,
+      "dow_Sat": -0.6146,
+      "dow_Sun": -0.8083,
+      "holiday_open": -0.3576,
+      "notice_decay": 0.3472
+    },
+    "outage": {
+      "const": 3.6485,
+      "months": 0.0054,
+      "dow_Mon": 0.3027,
+      "dow_Tue": 0.1458,
+      "dow_Wed": 0.0278,
+      "dow_Fri": -0.0748,
+      "dow_Sat": -0.618,
+      "dow_Sun": -0.8171,
+      "holiday_open": -0.4668
+    }
+  },
+  "forecast": {
+    "q1_legs_baseline": 64415.11793931186,
+    "q1_legs_scenario": 64944.81184126959,
+    "notice_extra_legs": 529.693901957733,
+    "q4_2025_legs": 64412.0,
+    "q1_2025_legs": 60005.0,
+    "growth_vs_q1_2025": 0.07349584100178075,
+    "scenario_peak_day": "2026-02-02",
+    "scenario_peak_day_legs": 1302.5977409596899
+  },
+  "aht_q4_2025_sec": {
+    "cancellations": 380.78612612612613,
+    "tech_support": 457.1121695178849,
+    "billing": 293.01069755977323,
+    "outage": 204.92433537832312,
+    "moves_new_service": 521.5194077631053
+  },
+  "staffing": {
+    "roster_fte": 48,
+    "shrinkage": 0.32,
+    "training_weeks": 6,
+    "ot_rate": 38.0,
+    "baseline_required_fte_mean": 50.34160539215687,
+    "baseline_required_fte_peak": 51.72794117647059,
+    "baseline_required_fte_first_week": 50.0735294117647,
+    "baseline_required_fte_last_week": 50.643382352941174,
+    "baseline_required_fte_p90_peak": 54.76102941176471,
+    "scenario_required_fte_peak": 53.98897058823529,
+    "scenario_peak_week": "2026-02-02",
+    "notice_weeks": [
+      "2026-02-02",
+      "2026-02-09"
+    ],
+    "notice_extra_fte_peak": 3.033088235294116,
+    "weeks_over_roster_baseline": 12,
+    "full_weeks": 12,
+    "first_gap_week": "2026-01-05",
+    "hires_needed": 4,
+    "hire_by_date": "2025-11-24",
+    "hire_by_already_passed": true,
+    "hires_productive_from": "2026-02-12",
+    "ot_hours_baseline": 336.40000000000055,
+    "ot_hours_scenario": 442.40000000000055,
+    "ot_cost_baseline": 12783.20000000002,
+    "ot_cost_scenario": 16811.20000000002,
+    "ot_cost_notice_incremental": 4028.0,
+    "ot_hours_notice_incremental": 106.0,
+    "ot_cost_no_hiring_baseline": 29043.40000000004,
+    "ot_cost_no_hiring_scenario": 33071.40000000004,
+    "pooled_required_fte_mean": 30.050551470588243,
+    "pooled_saving_fte": 20.29105392156863
+  },
+  "data_quality": {
+    "legs": 484516,
+    "tz_fixed_rows": 55969,
+    "raw_queue_codes": 11,
+    "ts_rows": 9418,
+    "unmapped_codes": 0,
+    "abandoned_handle_fixed": 284,
+    "abandoned_legs": 48597,
+    "missing_days": 2,
+    "staffing_rows_raw": 175440,
+    "dst_duplicate_rows": 20,
+    "missing_dates": [
+      "2024-08-12",
+      "2024-08-13"
+    ],
+    "q1_2024_calls_outside_hours_if_read_as_utc": 0
+  }
+}

@@ -1,0 +1,6 @@
+queue_id,queue_name,sl_target,sl_threshold_sec
+1,billing,0.8,60
+2,tech_support,0.8,60
+3,moves_new_service,0.8,60
+4,cancellations,0.8,60
+5,outage,0.8,60
