@@ -1,0 +1,12 @@
+duckdb==2.0.0
+matplotlib==3.11.2
+narwhals==2.27.1
+numpy==2.5.3
+pandas==3.0.5
+patsy==1.0.3
+plotly==7.1.0
+pyarrow==26.0.1
+pytest==9.1.1
+scipy==1.18.1
+seaborn==0.13.2
+statsmodels==0.15.0

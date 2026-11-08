@@ -1,0 +1,139 @@
+{
+  "seed": 42,
+  "parameters": {
+    "dow_multipliers_raw": {
+      "Mon": 1.35,
+      "Tue": 1.15,
+      "Wed": 1.05,
+      "Thu": 1.0,
+      "Fri": 0.95,
+      "Sat": 0.55,
+      "Sun": 0.45
+    },
+    "dow_relative_to_thursday": {
+      "Mon": 1.35,
+      "Tue": 1.15,
+      "Wed": 1.05,
+      "Thu": 1.0,
+      "Fri": 0.95,
+      "Sat": 0.55,
+      "Sun": 0.45
+    },
+    "dow_normalized_mean1": {
+      "Mon": 1.4538,
+      "Tue": 1.2385,
+      "Wed": 1.1308,
+      "Thu": 1.0769,
+      "Fri": 1.0231,
+      "Sat": 0.5923,
+      "Sun": 0.4846
+    },
+    "intraday_peak_10_to_1130": 1.6,
+    "intraday_peak_13_to_1430": 1.3,
+    "intraday_shape": {
+      "07:00": 0.6057,
+      "07:30": 0.6421,
+      "08:00": 0.703,
+      "08:30": 0.7928,
+      "09:00": 0.9082,
+      "09:30": 1.0355,
+      "10:00": 1.6,
+      "10:30": 1.6,
+      "11:00": 1.6,
+      "11:30": 1.2659,
+      "12:00": 1.2308,
+      "12:30": 1.189,
+      "13:00": 1.3,
+      "13:30": 1.3,
+      "14:00": 1.3,
+      "14:30": 1.0689,
+      "15:00": 1.016,
+      "15:30": 0.9505,
+      "16:00": 0.8873,
+      "16:30": 0.8467,
+      "17:00": 0.8408,
+      "17:30": 0.8601,
+      "18:00": 0.8734,
+      "18:30": 0.8501,
+      "19:00": 0.7864,
+      "19:30": 0.7068,
+      "20:00": 0.6404,
+      "20:30": 0.5997
+    },
+    "trend_per_month": 0.006,
+    "queue_share": {
+      "billing": 0.34,
+      "tech_support": 0.38,
+      "moves_new_service": 0.13,
+      "cancellations": 0.09,
+      "outage": 0.06
+    },
+    "base_daily_contacts": 590.0,
+    "billing_cycle_lift": 0.22,
+    "billing_cycle_days_after_bill_date": [
+      1,
+      2,
+      3
+    ],
+    "outage_calls_per_customer": 0.004,
+    "outage_spread_hours": 4.0,
+    "outage_decay_hours": 1.0,
+    "price_notice": {
+      "date": "2025-09-15",
+      "lift_day0": 0.4,
+      "half_life_days": 3.0,
+      "days": 10,
+      "queues": [
+        "billing",
+        "cancellations"
+      ],
+      "aht_lift": 0.08,
+      "aht_days": 14,
+      "scenario_2026": "2026-02-02"
+    },
+    "aht_median_min": {
+      "billing": 4.2,
+      "tech_support": 6.5,
+      "moves_new_service": 7.5,
+      "cancellations": 5.5,
+      "outage": 3.0
+    },
+    "aht_lognormal_sigma": 0.55,
+    "holiday_open_factor": 0.7,
+    "promo_lift_moves": 0.15,
+    "promo_days": 7,
+    "transfer_share": 0.04,
+    "patience_mean_sec": 900,
+    "missing_days": [
+      "2024-08-12",
+      "2024-08-13"
+    ],
+    "local_time_until": "2024-04-01",
+    "ivr_change": "2025-05-01",
+    "abandoned_with_handle_time_share": 0.006
+  },
+  "realized": {
+    "contacts_total": 467537,
+    "legs_total_before_missing_days": 486202,
+    "transfer_contacts": 18665,
+    "transfer_share": 0.039921974089751185,
+    "outage_calls_generated": 1820,
+    "outage_calls_offered": 1820,
+    "outage_slope_realized": 0.003955282783011652,
+    "notice_aht_ratio_realized": 1.0812713449247233,
+    "abandoned_with_handle_time": 284,
+    "tech_ts_code_rows": 9418,
+    "q4_2025_weekly_scheduled_agent_hours": 1298.7272727272727,
+    "q4_2025_implied_fte": 47.747326203208566,
+    "abandon_rate": 0.10034101052648899,
+    "rows": {
+      "fact_call_leg": 484516,
+      "dim_customer": 120000,
+      "dim_queue": 5,
+      "fact_outage": 90,
+      "dim_business_event": 30,
+      "fact_staffing_interval": 175440,
+      "dim_date": 821
+    }
+  }
+}
