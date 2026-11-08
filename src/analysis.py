@@ -458,7 +458,7 @@ def main():
     sched = con.execute("""SELECT dayname(date) AS dow_name, slot48, AVG(agents_scheduled) AS scheduled FROM (
                                SELECT date, slot48, SUM(agents_scheduled) AS agents_scheduled FROM mart_interval_queue
                                WHERE date >= DATE '2025-10-01' AND slot48 BETWEEN 14 AND 41 GROUP BY date, slot48)
-                           GROUP BY 1, 2""").df()
+                           GROUP BY 1, 2 ORDER BY 1, 2""").df()
     sched["dow"] = sched.dow_name.str[:3]
     sched[["dow", "slot48", "scheduled"]].to_csv(TABLES / "scheduled_agents_heatmap_q4_2025.csv", index=False)
 
