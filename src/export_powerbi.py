@@ -11,13 +11,13 @@ OUT = ROOT / "powerbi" / "csv"
 SAMPLE = ROOT / "data" / "sample"
 
 QUERIES = {
-    "dim_date": "SELECT * FROM mart_daily_features",
+    "dim_date": "SELECT * FROM mart_daily_features ORDER BY date",
     "dim_queue": "SELECT * FROM stg_queue",
-    "fact_daily_queue": "SELECT q.queue_id, d.* EXCLUDE (queue_name) FROM mart_daily_queue d JOIN stg_queue q USING (queue_name)",
-    "fact_interval_queue": "SELECT * EXCLUDE (queue_name) FROM mart_interval_queue WHERE slot48 BETWEEN 14 AND 41",
+    "fact_daily_queue": "SELECT q.queue_id, d.* EXCLUDE (queue_name) FROM mart_daily_queue d JOIN stg_queue q USING (queue_name) ORDER BY d.date, q.queue_id",
+    "fact_interval_queue": "SELECT * EXCLUDE (queue_name) FROM mart_interval_queue WHERE slot48 BETWEEN 14 AND 41 ORDER BY date, slot48, queue_id",
     "fact_forecast_daily": """SELECT f.date, q.queue_id, f.scenario, f.mean AS forecast_legs, f.lo80, f.hi80
                               FROM read_csv('reports/tables/forecast_daily_q1_2026.csv') f
-                              JOIN stg_queue q ON q.queue_name = f.queue""",
+                              JOIN stg_queue q ON q.queue_name = f.queue ORDER BY f.scenario, f.date, q.queue_id""",
     "fact_staffing_weekly": "SELECT * FROM read_csv('reports/tables/06_staffing_requirement.csv')",
 }
 
