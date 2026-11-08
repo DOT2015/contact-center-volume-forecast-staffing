@@ -24,8 +24,12 @@ QLABEL = {"billing": "Billing", "tech_support": "Tech support", "moves_new_servi
 DOWS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 
+_N = [0]
+
+
 def div(fig, first=False):
-    return pio.to_html(fig, include_plotlyjs=True if first else False, full_html=False,
+    _N[0] += 1   # fixed div ids keep the HTML byte-identical between runs
+    return pio.to_html(fig, include_plotlyjs=True if first else False, full_html=False, div_id=f"fig{_N[0]}",
                        config={"displaylogo": False, "responsive": True})
 
 
